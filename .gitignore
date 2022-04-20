@@ -51,3 +51,6 @@
 
 # Ignore .env files as they are personal
 /.env
+### VS Code ###
+.vscode/
+.newsql-data
