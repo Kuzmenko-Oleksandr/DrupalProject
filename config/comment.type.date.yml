@@ -1,0 +1,8 @@
+uuid: c1a207f9-3c3f-4483-a451-10c6a4111a48
+langcode: en
+status: true
+dependencies: {  }
+id: date
+label: date
+target_entity_type_id: block_content
+description: ''
