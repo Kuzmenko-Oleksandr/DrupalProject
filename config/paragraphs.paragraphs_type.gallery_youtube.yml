@@ -1,0 +1,10 @@
+uuid: d34cf977-e8c3-41c2-bae5-c9b14a0792b0
+langcode: en
+status: true
+dependencies: {  }
+id: gallery_youtube
+label: 'Gallery YouTube'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

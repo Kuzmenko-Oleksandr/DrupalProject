@@ -3,13 +3,34 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.image_and_text.field_content
+    - field.field.paragraph.image_and_text.field_image
     - field.field.paragraph.image_and_text.field_text
     - paragraphs.paragraphs_type.image_and_text
+  module:
+    - image
+    - text
 id: paragraph.image_and_text.default
 targetEntityType: paragraph
 bundle: image_and_text
 mode: default
 content:
+  field_content:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_image:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
   field_text:
     type: string
     label: above

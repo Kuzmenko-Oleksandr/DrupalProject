@@ -1,0 +1,33 @@
+uuid: fce30899-57ca-48b4-bbab-38f43a3bb549
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.gallery_.field_images
+    - field.field.paragraph.gallery_.field_text
+    - paragraphs.paragraphs_type.gallery_
+  module:
+    - image
+id: paragraph.gallery_.default
+targetEntityType: paragraph
+bundle: gallery_
+mode: default
+content:
+  field_images:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_text:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

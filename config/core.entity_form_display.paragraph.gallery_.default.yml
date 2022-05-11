@@ -1,30 +1,20 @@
-uuid: 0f21fc2c-00fb-4e84-854d-d813c5b8ed8d
+uuid: afcb306d-4215-45e1-9a51-0fa26c58581e
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.image_and_text.field_content
-    - field.field.paragraph.image_and_text.field_image
-    - field.field.paragraph.image_and_text.field_text
+    - field.field.paragraph.gallery_.field_images
+    - field.field.paragraph.gallery_.field_text
     - image.style.thumbnail
-    - paragraphs.paragraphs_type.image_and_text
+    - paragraphs.paragraphs_type.gallery_
   module:
     - image
-    - text
-id: paragraph.image_and_text.default
+id: paragraph.gallery_.default
 targetEntityType: paragraph
-bundle: image_and_text
+bundle: gallery_
 mode: default
 content:
-  field_content:
-    type: text_textarea
-    weight: 2
-    region: content
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-  field_image:
+  field_images:
     type: image_image
     weight: 1
     region: content

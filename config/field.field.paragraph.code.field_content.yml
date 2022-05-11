@@ -1,0 +1,24 @@
+uuid: 32e34d5f-4266-4607-a84b-fab3d18d542e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_content
+    - paragraphs.paragraphs_type.code
+  module:
+    - text
+id: paragraph.code.field_content
+field_name: field_content
+entity_type: paragraph
+bundle: code
+label: Content
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: "```php\r\n```"
+    format: basic_html
+default_value_callback: ''
+settings: {  }
+field_type: text_long
