@@ -1,0 +1,20 @@
+uuid: 6ed91fe3-3838-41c2-90f2-5c8c06b8cf54
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - paragraphs
+id: paragraph.field_remote_videos
+field_name: field_remote_videos
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

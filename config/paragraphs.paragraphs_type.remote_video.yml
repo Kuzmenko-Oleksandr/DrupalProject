@@ -1,0 +1,10 @@
+uuid: 89995e59-3a03-4465-903d-5905757e3dad
+langcode: en
+status: true
+dependencies: {  }
+id: remote_video
+label: 'Remote video'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

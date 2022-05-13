@@ -1,0 +1,29 @@
+uuid: 56a3e67d-106b-466c-a193-b2cf457e63a4
+langcode: en
+status: true
+dependencies:
+  module:
+    - markdown
+name: Markdown
+format: markdown
+weight: -10
+filters:
+  markdown:
+    id: markdown
+    provider: markdown
+    status: true
+    weight: -15
+    settings:
+      id: php-markdown
+      enabled: true
+      render_strategy:
+        type: filter_output
+        custom_allowed_html: ''
+        plugins:
+          bootstrap: true
+          filter_align: false
+          filter_caption: false
+          media_embed: false
+          parsedown: false
+      override: false
+    filterFormat: null

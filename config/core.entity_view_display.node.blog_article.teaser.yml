@@ -5,7 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.blog_article.body
-    - field.field.node.blog_article.field_attachments
+    - field.field.node.blog_article.field_attached_file
     - field.field.node.blog_article.field_paragraphs
     - field.field.node.blog_article.field_promo_image
     - field.field.node.blog_article.field_tag
@@ -32,7 +32,7 @@ content:
     weight: 100
     region: content
 hidden:
-  field_attachments: true
+  field_attached_file: true
   field_paragraphs: true
   field_promo_image: true
   field_tag: true

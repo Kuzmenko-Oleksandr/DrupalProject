@@ -4,10 +4,12 @@ status: true
 dependencies:
   config:
     - filter.format.basic_html
+    - filter.format.markdown
   module:
     - comment
     - contact
     - filter
+    - media
     - search
     - shortcut
     - system
@@ -26,3 +28,5 @@ permissions:
   - 'search content'
   - 'skip comment approval'
   - 'use text format basic_html'
+  - 'use text format markdown'
+  - 'view media'

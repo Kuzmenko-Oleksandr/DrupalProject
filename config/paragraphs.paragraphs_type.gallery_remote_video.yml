@@ -1,0 +1,10 @@
+uuid: 30d40acf-afce-4552-a43a-1d0197c0ff5a
+langcode: en
+status: true
+dependencies: {  }
+id: gallery_remote_video
+label: 'Gallery remote video'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

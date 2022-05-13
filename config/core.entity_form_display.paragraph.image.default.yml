@@ -5,22 +5,20 @@ dependencies:
   config:
     - field.field.paragraph.image.field_image
     - field.field.paragraph.image.field_text
-    - image.style.thumbnail
     - paragraphs.paragraphs_type.image
   module:
-    - image
+    - media_library
 id: paragraph.image.default
 targetEntityType: paragraph
 bundle: image
 mode: default
 content:
   field_image:
-    type: image_image
+    type: media_library_widget
     weight: 1
     region: content
     settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
+      media_types: {  }
     third_party_settings: {  }
   field_text:
     type: string_textfield

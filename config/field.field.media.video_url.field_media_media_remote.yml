@@ -1,0 +1,19 @@
+uuid: 545133b9-e06e-4022-b17c-e3349cd6cb3d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_media_remote
+    - media.type.video_url
+id: media.video_url.field_media_media_remote
+field_name: field_media_media_remote
+entity_type: media
+bundle: video_url
+label: 'Remote Media URL'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

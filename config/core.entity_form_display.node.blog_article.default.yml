@@ -4,16 +4,14 @@ status: true
 dependencies:
   config:
     - field.field.node.blog_article.body
-    - field.field.node.blog_article.field_attachments
+    - field.field.node.blog_article.field_attached_file
     - field.field.node.blog_article.field_paragraphs
     - field.field.node.blog_article.field_promo_image
     - field.field.node.blog_article.field_tag
-    - image.style.thumbnail
     - node.type.blog_article
   module:
     - field_group
-    - file
-    - image
+    - media_library
     - paragraphs
     - path
     - scheduler
@@ -69,7 +67,7 @@ third_party_settings:
         required_fields: true
     group_media:
       children:
-        - field_attachments
+        - field_attached_file
         - field_promo_image
       label: Media
       region: content
@@ -104,12 +102,12 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_attachments:
-    type: file_generic
-    weight: 27
+  field_attached_file:
+    type: media_library_widget
+    weight: 29
     region: content
     settings:
-      progress_indicator: throbber
+      media_types: {  }
     third_party_settings: {  }
   field_paragraphs:
     type: paragraphs
@@ -131,12 +129,11 @@ content:
         duplicate: duplicate
     third_party_settings: {  }
   field_promo_image:
-    type: image_image
-    weight: 28
+    type: media_library_widget
+    weight: 30
     region: content
     settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
+      media_types: {  }
     third_party_settings: {  }
   field_tag:
     type: entity_reference_autocomplete
