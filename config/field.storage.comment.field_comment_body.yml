@@ -1,18 +1,15 @@
-uuid: bee2c2f2-3b80-4c76-b2f7-58db801bbf28
+uuid: ed5f2970-ca18-4303-a68a-08f5dd6d0e39
 langcode: en
 status: true
 dependencies:
   module:
     - comment
-    - node
-_core:
-  default_config_hash: ktCna9xmWvYZIUfOCUyDQvedn5RtnS4CRmEIwNmvYjc
-id: node.comment
-field_name: comment
-entity_type: node
+id: comment.field_comment_body
+field_name: field_comment_body
+entity_type: comment
 type: comment
 settings:
-  comment_type: comment
+  comment_type: ''
 module: comment
 locked: false
 cardinality: 1

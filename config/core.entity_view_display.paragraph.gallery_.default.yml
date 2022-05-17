@@ -4,10 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.gallery_.field_gallery
-    - field.field.paragraph.gallery_.field_images
     - paragraphs.paragraphs_type.gallery_
-  module:
-    - image
 id: paragraph.gallery_.default
 targetEntityType: paragraph
 bundle: gallery_
@@ -21,14 +18,5 @@ content:
       link: false
     third_party_settings: {  }
     weight: 2
-    region: content
-  field_images:
-    type: image
-    label: above
-    settings:
-      image_link: ''
-      image_style: ''
-    third_party_settings: {  }
-    weight: 1
     region: content
 hidden: {  }

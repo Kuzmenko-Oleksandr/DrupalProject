@@ -4,9 +4,9 @@ status: true
 dependencies:
   config:
     - comment.type.comment
-    - field.field.comment.comment.comment_body
+    - field.field.comment.comment.field_comment_body
   module:
-    - text
+    - comment
 _core:
   default_config_hash: aBQUGsQ46M4048fIlFuTXwl2zV0j2cJX89CTUobh9hA
 id: comment.comment.default
@@ -14,12 +14,14 @@ targetEntityType: comment
 bundle: comment
 mode: default
 content:
-  comment_body:
-    type: text_default
-    label: hidden
-    settings: {  }
+  field_comment_body:
+    type: comment_default
+    label: above
+    settings:
+      view_mode: default
+      pager_id: 0
     third_party_settings: {  }
-    weight: 0
+    weight: 101
     region: content
   links:
     weight: 100

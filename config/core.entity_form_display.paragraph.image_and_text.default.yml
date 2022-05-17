@@ -8,7 +8,6 @@ dependencies:
     - field.field.paragraph.image_and_text.field_text
     - paragraphs.paragraphs_type.image_and_text
   module:
-    - media_library
     - text
 id: paragraph.image_and_text.default
 targetEntityType: paragraph
@@ -24,11 +23,14 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_image:
-    type: media_library_widget
+    type: entity_reference_autocomplete
     weight: 3
     region: content
     settings:
-      media_types: {  }
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_text:
     type: string_textfield

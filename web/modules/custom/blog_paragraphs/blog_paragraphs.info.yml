@@ -1,0 +1,7 @@
+name: Blog - paragraphs
+type: module
+description: custom code for paragraphs enhancment.
+package: blog
+core_version_requirement: ^9 || ^10
+dependencies:
+  - paragraphs:paragraphs

@@ -1,8 +1,0 @@
-uuid: a0eeb7d9-a356-447f-9c2f-d0544c33828e
-langcode: en
-status: true
-dependencies: {  }
-id: category
-label: category
-target_entity_type_id: block_content
-description: ''
