@@ -14,7 +14,7 @@ use Drupal\paragraphs\ParagraphsBehaviorBase;
 
 /**
  * @ParagraphsBehavior(
- *   id = "dlog_paragraphs_gallery",
+ *   id = "blog_paragraphs_gallery",
  *   label = @Translation("Gallery settings"),
  *   description= @Translation("Settings for gallery paragraph type."),
  *   weight = 0,
@@ -28,7 +28,7 @@ class GalleryBehavior extends ParagraphsBehaviorBase
    */
   public static function isApplicable(ParagraphsType $paragraphs_type)
   {
-    return $paragraphs_type->id() == 'gallery';
+    return $paragraphs_type->id() == 'galery';
   }
 
   /**
@@ -84,4 +84,3 @@ class GalleryBehavior extends ParagraphsBehaviorBase
   }
 
 }
-
