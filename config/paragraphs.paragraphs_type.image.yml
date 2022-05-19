@@ -1,10 +1,14 @@
 uuid: 463f0837-691d-40ef-8b49-fa77aca8fd6f
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - blog_paragraphs
 id: image
 label: Image
 icon_uuid: null
 icon_default: null
 description: ''
-behavior_plugins: {  }
+behavior_plugins:
+  blog_paragraphs_paragraph_class:
+    enabled: true

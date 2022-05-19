@@ -1,10 +1,14 @@
 uuid: 30d40acf-afce-4552-a43a-1d0197c0ff5a
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - blog_paragraphs
 id: gallery_remote_video
 label: 'Gallery remote video'
 icon_uuid: null
 icon_default: null
 description: ''
-behavior_plugins: {  }
+behavior_plugins:
+  blog_paragraphs_paragraph_class:
+    enabled: true

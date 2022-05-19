@@ -1,11 +1,11 @@
 _core:
   default_config_hash: V8V4qoFWUmhf9Atc_VX3qfO2bgt4z7cF4YCm7hlVdeY
-photoswipe_always_load_non_admin: false
+photoswipe_always_load_non_admin: true
 options:
   showAnimationDuration: 333
   hideAnimationDuration: 333
   showHideOpacity: false
-  bgOpacity: 1
+  bgOpacity: !!float 1
   spacing: 0.12
   allowPanToNext: true
   maxSpreadZoom: 2
@@ -24,3 +24,7 @@ options:
   mainClass: null
   focus: true
   modal: true
+actions: null
+form_build_id: form-3X1DIeb_Dd_cRFao4aaoxkOeyXdDdGFSBkO1R0qg8HA
+form_token: aTE0V9ZqYJ8aq2eBEQ-T0BJUPUTDXGR750XkDl1AEdk
+form_id: photoswipe_admin_settings

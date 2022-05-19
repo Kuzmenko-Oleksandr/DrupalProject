@@ -1,16 +1,16 @@
-uuid: 9b33a470-9ab2-4989-b240-6c1b670f54e4
+uuid: 6420cbda-8cff-4400-b8b8-952505ec6922
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_gallery
+    - field.storage.paragraph.field_imagee
     - media.type.image
-    - paragraphs.paragraphs_type.gallery_
-id: paragraph.gallery_.field_gallery
-field_name: field_gallery
+    - paragraphs.paragraphs_type.image_and_text
+id: paragraph.image_and_text.field_imagee
+field_name: field_imagee
 entity_type: paragraph
-bundle: gallery_
-label: Gallery
+bundle: image_and_text
+label: Image
 description: ''
 required: true
 translatable: false

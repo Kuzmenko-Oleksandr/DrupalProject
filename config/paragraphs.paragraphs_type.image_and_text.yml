@@ -1,10 +1,16 @@
-uuid: 9c4ebab3-ccf6-4de8-8932-4a4fbb707fa7
+uuid: 7a732f97-86a1-4edc-a719-1b7234ce7df0
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - blog_paragraphs
 id: image_and_text
 label: 'Image and text'
 icon_uuid: null
 icon_default: null
 description: ''
-behavior_plugins: {  }
+behavior_plugins:
+  blog_paragraphs_image_and_text:
+    enabled: true
+  blog_paragraphs_paragraph_class:
+    enabled: true

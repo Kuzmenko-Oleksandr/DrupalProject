@@ -1,12 +1,12 @@
-uuid: 058a5ac5-18c3-4e4e-8d3b-c040d6900d97
+uuid: 222cfcc0-e68a-4caa-85b1-9f3359d9ea81
 langcode: en
 status: true
 dependencies:
   module:
     - media
     - paragraphs
-id: paragraph.field_gallery
-field_name: field_gallery
+id: paragraph.field_images
+field_name: field_images
 entity_type: paragraph
 type: entity_reference
 settings:

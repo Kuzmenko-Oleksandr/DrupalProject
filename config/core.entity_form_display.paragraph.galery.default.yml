@@ -1,19 +1,19 @@
-uuid: 085d602e-e65c-40bc-b88c-2ba48c409fe8
+uuid: 1f909a7b-376c-4945-b554-a8b0c7413fc3
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.image_and_text.field_imagee
-    - field.field.paragraph.image_and_text.field_text
-    - paragraphs.paragraphs_type.image_and_text
+    - field.field.paragraph.galery.field_images
+    - field.field.paragraph.galery.field_text
+    - paragraphs.paragraphs_type.galery
   module:
     - media_library
-id: paragraph.image_and_text.default
+id: paragraph.galery.default
 targetEntityType: paragraph
-bundle: image_and_text
+bundle: galery
 mode: default
 content:
-  field_imagee:
+  field_images:
     type: media_library_widget
     weight: 1
     region: content

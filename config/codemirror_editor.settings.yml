@@ -4,4 +4,15 @@ cdn: true
 minified: true
 theme: default
 language_modes:
+  - clike
+  - css
+  - htmlmixed
+  - javascript
+  - markdown
+  - php
+  - python
+  - ruby
+  - sql
+  - twig
   - xml
+  - yaml

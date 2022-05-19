@@ -1,10 +1,14 @@
 uuid: 89995e59-3a03-4465-903d-5905757e3dad
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - blog_paragraphs
 id: remote_video
 label: 'Remote video'
 icon_uuid: null
 icon_default: null
 description: ''
-behavior_plugins: {  }
+behavior_plugins:
+  blog_paragraphs_paragraph_class:
+    enabled: true

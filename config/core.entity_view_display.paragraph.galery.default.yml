@@ -1,17 +1,17 @@
-uuid: c5434e2c-dea9-45a4-8936-85f112ce460f
+uuid: d85b5c12-011f-4197-a3b2-92e8a8224c6a
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.image_and_text.field_imagee
-    - field.field.paragraph.image_and_text.field_text
-    - paragraphs.paragraphs_type.image_and_text
-id: paragraph.image_and_text.default
+    - field.field.paragraph.galery.field_images
+    - field.field.paragraph.galery.field_text
+    - paragraphs.paragraphs_type.galery
+id: paragraph.galery.default
 targetEntityType: paragraph
-bundle: image_and_text
+bundle: galery
 mode: default
 content:
-  field_imagee:
+  field_images:
     type: entity_reference_entity_view
     label: above
     settings:
