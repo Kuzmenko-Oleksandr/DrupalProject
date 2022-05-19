@@ -1,15 +1,15 @@
-uuid: 131c18bd-f3b4-4352-87e0-f6856259859c
+uuid: eed62d86-2085-4a98-ad74-23db4bc6f152
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_text
-    - paragraphs.paragraphs_type.remotevideo
-id: paragraph.remotevideo.field_text
+    - paragraphs.paragraphs_type.remote_video
+id: paragraph.remote_video.field_text
 field_name: field_text
 entity_type: paragraph
-bundle: remotevideo
-label: Text
+bundle: remote_video
+label: Title
 description: ''
 required: false
 translatable: true

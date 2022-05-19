@@ -1,4 +1,5 @@
 <?php
+
 namespace Drupal\blog_paragraphs\Plugin\paragraphs\Behavior;
 
 use Drupal\Component\Utility\Html;
@@ -19,19 +20,22 @@ use Drupal\paragraphs\ParagraphsBehaviorBase;
  *   weight = 0,
  * )
  */
-class ParagraphClassBehavior extends ParagraphsBehaviorBase {
+class ParagraphClassBehavior extends ParagraphsBehaviorBase
+{
 
   /**
    * {@inheritdoc}
    */
-  public static function isApplicable(ParagraphsType $paragraphs_type) {
+  public static function isApplicable(ParagraphsType $paragraphs_type)
+  {
     return TRUE;
   }
 
   /**
    * Extends the paragraph render array with behavior.
    */
-  public function view(array &$build, Paragraph $paragraph, EntityViewDisplayInterface $display, $view_mode) {
+  public function view(array &$build, Paragraph $paragraph, EntityViewDisplayInterface $display, $view_mode)
+  {
     $classes_value = $paragraph->getBehaviorSetting($this->getPluginId(), 'classes', '');
     $classes = explode(' ', $classes_value);
 
@@ -43,7 +47,8 @@ class ParagraphClassBehavior extends ParagraphsBehaviorBase {
   /**
    * {@inheritdoc}
    */
-  public function buildBehaviorForm(ParagraphInterface $paragraph, array &$form, FormStateInterface $form_state) {
+  public function buildBehaviorForm(ParagraphInterface $paragraph, array &$form, FormStateInterface $form_state)
+  {
 
     $form['classes'] = [
       '#type' => 'textfield',

@@ -1,16 +1,16 @@
-uuid: c6107b55-d6c7-4b7d-b843-140d9db1bdfe
+uuid: 7c88b2ae-9bcb-487c-91e8-3d6071750778
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_remote_video
     - media.type.remote_video
-    - paragraphs.paragraphs_type.remotevideo
-id: paragraph.remotevideo.field_remote_video
+    - paragraphs.paragraphs_type.remote_video
+id: paragraph.remote_video.field_remote_video
 field_name: field_remote_video
 entity_type: paragraph
-bundle: remotevideo
-label: 'Remote video'
+bundle: remote_video
+label: Remote_video
 description: ''
 required: true
 translatable: false

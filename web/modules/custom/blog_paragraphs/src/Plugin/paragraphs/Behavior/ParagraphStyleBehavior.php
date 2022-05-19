@@ -1,4 +1,5 @@
 <?php
+
 namespace Drupal\blog_paragraphs\Plugin\paragraphs\Behavior;
 
 use Drupal\Component\Utility\Html;
@@ -19,19 +20,22 @@ use Drupal\paragraphs\ParagraphsBehaviorBase;
  *   paragraphs."), weight = 0,
  * )
  */
-class ParagraphStyleBehavior extends ParagraphsBehaviorBase {
+class ParagraphStyleBehavior extends ParagraphsBehaviorBase
+{
 
   /**
    * {@inheritdoc}
    */
-  public static function isApplicable(ParagraphsType $paragraphs_type) {
+  public static function isApplicable(ParagraphsType $paragraphs_type)
+  {
     return TRUE;
   }
 
   /**
    * Extends the paragraph render array with behavior.
    */
-  public function view(array &$build, Paragraph $paragraph, EntityViewDisplayInterface $display, $view_mode) {
+  public function view(array &$build, Paragraph $paragraph, EntityViewDisplayInterface $display, $view_mode)
+  {
     $bem_block = 'paragraph-style';
     $selected_styles = $paragraph->getBehaviorSetting($this->getPluginId(), 'styles', []);
 
@@ -43,7 +47,8 @@ class ParagraphStyleBehavior extends ParagraphsBehaviorBase {
   /**
    * {@inheritdoc}
    */
-  public function buildBehaviorForm(ParagraphInterface $paragraph, array &$form, FormStateInterface $form_state) {
+  public function buildBehaviorForm(ParagraphInterface $paragraph, array &$form, FormStateInterface $form_state)
+  {
 
     $form['style_wrapper'] = [
       '#type' => 'details',
@@ -70,7 +75,8 @@ class ParagraphStyleBehavior extends ParagraphsBehaviorBase {
   /**
    * {@inheritdoc}
    */
-  public function submitBehaviorForm(ParagraphInterface $paragraph, array &$form, FormStateInterface $form_state) {
+  public function submitBehaviorForm(ParagraphInterface $paragraph, array &$form, FormStateInterface $form_state)
+  {
     $styles = [];
     $filtered_values = $this->filterBehaviorFormSubmitValues($paragraph, $form, $form_state);
 
@@ -90,7 +96,8 @@ class ParagraphStyleBehavior extends ParagraphsBehaviorBase {
   /**
    * Return styles for paragraph.
    */
-  public function getStyles(ParagraphInterface $paragraph) {
+  public function getStyles(ParagraphInterface $paragraph)
+  {
     $style = [];
 
     if ($paragraph->hasField('field_title')) {
@@ -101,16 +108,15 @@ class ParagraphStyleBehavior extends ParagraphsBehaviorBase {
           'title_centered' => $this->t('Centered'),
         ],
       ];
+    } else if ($paragraph->hasField('field_text')) {
+      $style['text'] = [
+        'label' => $this->t('Paragraphs text'),
+        'options' => [
+          'text_bold' => $this->t('Bold'),
+          'text_centered' => $this->t('Centered'),
+        ],
+      ];
     }
-    else if ($paragraph->hasField('field_text')){
-    $style['text'] = [
-      'label' => $this->t('Paragraphs text'),
-      'options' => [
-        'text_bold' => $this->t('Bold'),
-        'text_centered' => $this->t('Centered'),
-      ],
-    ];
-  }
 
     $style['common'] = [
       'label' => $this->t('Paragraphs common styles'),
