@@ -11,7 +11,20 @@ jobs:
         run: make up
       - name: Pre-Install
         run: docker-compose exec -T --user=root php bash -c 'chown -R www-data:www-data /var/www'
-      - name: Install
-        run: make install
+      # don't need this?
+      #       - name: Install
+      #         run: make install
       - name: Test
         run: make test
+      - name: install phpcs
+        run: docker-compose exec -T --user=root php bash -c 'composer require --dev squizlabs/php_codesniffer'
+      # it's ok. disable for now?
+      #      - name: phpcbf
+      #        run: docker-compose exec -T --user=root php bash -c './vendor/bin/phpcbf --standard=Drupal web/modules/custom'
+      # it's ok. disable for now?
+      #      - name: run phpcs
+      #        run: docker-compose exec -T --user=root php bash -c './vendor/bin/phpcs --standard=Drupal web/modules/custom'
+      # something is wrong:
+      - name: Deploy
+        run: |
+          curl -s -H "Authorization: Bearer $TUGBOAT_TOKEN" -H "Content-Type: application/json" -X POST -d "{\"repo\":\"$TUGBOAT_ID\",\"ref\":\"main\",\"type\":\"branch\"}"  https://api.tugboat.qa/v3/previews
