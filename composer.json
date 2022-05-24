@@ -70,6 +70,7 @@
         "drupal/scheduler": "^1.4",
         "drupal/snippet_manager": "^1.8",
         "drupal/swiftmailer": "^2.2",
+        "drupal/tvi": "^1.0@RC",
         "drupal/twig_tweak": "^3.1",
         "drupal/views_templates": "^1.1",
         "drupal/youtube": "^1.2",
