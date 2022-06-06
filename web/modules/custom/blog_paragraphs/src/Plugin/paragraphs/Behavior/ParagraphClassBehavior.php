@@ -1,5 +1,11 @@
 <?php
-
+//        ..／＞...フ
+//　　　　　| 　_　 _|
+//　 　　　／`ミ _x 彡
+//　　 　 /　　　 　 |
+//　　　 /　 ヽ　　 ﾉ
+//　／￣|　　 |　|　|
+//　| (￣ヽ＿_ヽ_)_)
 namespace Drupal\blog_paragraphs\Plugin\paragraphs\Behavior;
 
 use Drupal\Component\Utility\Html;

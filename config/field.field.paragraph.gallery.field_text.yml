@@ -1,15 +1,15 @@
-uuid: ff307fa6-c6d6-43f2-95c2-99cd4a31e64a
+uuid: 7f92f6f5-0767-4950-acba-24b835fdb01e
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_text
-    - paragraphs.paragraphs_type.galery
-id: paragraph.galery.field_text
+    - paragraphs.paragraphs_type.gallery
+id: paragraph.gallery.field_text
 field_name: field_text
 entity_type: paragraph
-bundle: galery
-label: Title
+bundle: gallery
+label: Content
 description: ''
 required: false
 translatable: true

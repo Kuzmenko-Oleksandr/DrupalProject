@@ -10,11 +10,13 @@ module:
   block_content: 0
   block_visibility_groups: 0
   blog: 0
+  blog_hero: 0
   blog_paragraphs: 0
   breakpoint: 0
   ckeditor: 0
   codemirror_editor: 0
   color: 0
+  colorbox: 0
   comment: 0
   config: 0
   contact: 0
@@ -35,6 +37,7 @@ module:
   entity_reference_revisions: 0
   field: 0
   field_group: 0
+  field_image_style: 0
   field_ui: 0
   file: 0
   file_mdm: 0

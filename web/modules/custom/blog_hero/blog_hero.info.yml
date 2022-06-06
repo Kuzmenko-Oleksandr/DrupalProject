@@ -1,0 +1,7 @@
+name: Blog Hero
+description: Custom page title.
+type: module
+core_version_requirement: ^9 || ^10
+dependencies:
+  - drupal:system
+  - twig_tweak:twig_tweak

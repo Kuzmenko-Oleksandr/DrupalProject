@@ -1,11 +1,11 @@
-uuid: 970baebb-158d-4fce-b0e2-ae838ce9cca0
+uuid: 1c1592f8-ba22-4a28-b4f3-2d846cd25a71
 langcode: en
 status: true
 dependencies:
   module:
     - blog_paragraphs
-id: galery
-label: Galery
+id: gallery
+label: Gallery
 icon_uuid: null
 icon_default: null
 description: ''
@@ -15,4 +15,6 @@ behavior_plugins:
   blog_paragraphs_paragraph_class:
     enabled: true
   blog_paragraphs_paragraph_style:
+    enabled: true
+  blog_paragraphs_paragraph_title_and_text:
     enabled: true

@@ -1,19 +1,20 @@
-uuid: 4f88970e-eff6-4943-a2d1-537b07238edf
+uuid: c3aea230-4764-40c4-ad68-0f51a7d6fb52
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.image.field_image
-    - field.field.paragraph.image.field_text
-    - paragraphs.paragraphs_type.image
+    - field.field.paragraph.gallery.field_images
+    - field.field.paragraph.gallery.field_text
+    - paragraphs.paragraphs_type.gallery
   module:
+    - ds
     - photoswipe
-id: paragraph.image.default
+id: paragraph.gallery.default
 targetEntityType: paragraph
-bundle: image
+bundle: gallery
 mode: default
 content:
-  field_image:
+  field_images:
     type: photoswipe_field_formatter
     label: above
     settings:
@@ -24,7 +25,9 @@ content:
       photoswipe_caption: title
       photoswipe_caption_custom: ''
       photoswipe_view_mode: default
-    third_party_settings: {  }
+    third_party_settings:
+      ds:
+        ds_limit: ''
     weight: 1
     region: content
   field_text:
