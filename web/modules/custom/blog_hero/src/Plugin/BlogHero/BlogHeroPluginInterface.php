@@ -10,63 +10,62 @@ use Drupal\Component\Plugin\PluginInspectionInterface;
 interface BlogHeroPluginInterface extends PluginInspectionInterface {
 
   /**
+   * The plugin status.
    * Gets plugin status.
    *
    * @return bool
-   *   The plugin status.
    */
-  public function getEnabled();
+  public function getEnabled(): bool;
 
   /**
+   * The plugin weight.
    * Gets plugin weight.
    *
    * @return int
-   *   The plugin weight.
    */
-  public function getWeight();
+  public function getWeight(): int;
+
 
   /**
+   * The title.
    * Gets hero title.
    *
-   * @return string
-   *   The title.
+   * @return string|array|null
    */
-  public function getHeroTitle();
+  public function getHeroTitle(): string|array|null;
 
   /**
+   * The subtitle.
    * Gets hero subtitle.
    *
    * @return string
-   *   The subtitle.
    */
-  public function getHeroSubtitle();
+  public function getHeroSubtitle(): string;
 
   /**
+   * The URI of image.
    * Gets hero image URI.
    *
    * @return string
-   *   The URI of image.
    */
-  public function getHeroImage();
+  public function getHeroImage(): string;
 
   /**
    * Gets hero video URI.
+   * An array with videos URI's.
    *
-   * An array with link to the same video in different types.
-   *
-   * Keys of array is represents their type and vule is file URI.
+   * Keys of array is represents their type and value is file URI.
    *
    * @code
    * return [
-   *   'video/mp4' => 'big-buck-bunny.mp4',
-   *   'video/ogg' => 'big-buck-bunny.ogg',
-   *   'video/webm' => 'big-buck-bunny.webm',
+   *  'video/mp4' => 'big-buck-bunny.mp4'
+   *  'video/ogg' => 'big-buck-bunny.ogg'
+   *  'video/webm' => 'big-buck-bunny.webm'
    * ];
    * @endcode
    *
    * @return array
-   *   An array with video URI's.
    */
-  public function getHeroVideo();
+  public function getHeroVideo(): array;
 
 }

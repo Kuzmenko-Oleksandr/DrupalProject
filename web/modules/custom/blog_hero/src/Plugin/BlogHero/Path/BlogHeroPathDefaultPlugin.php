@@ -1,6 +1,8 @@
 <?php
 
+
 namespace Drupal\blog_hero\Plugin\BlogHero\Path;
+
 
 use Drupal\blog_hero\Annotation\BlogHeroPath;
 

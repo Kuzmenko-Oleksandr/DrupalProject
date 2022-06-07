@@ -2,10 +2,12 @@
 
 namespace Drupal\blog_hero\Plugin;
 
+
 use Drupal\Core\Cache\CacheBackendInterface;
-use Drupal\Core\Condition\ConditionManager;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Extension\ModuleHandlerInterface;
+use Drupal\Core\Path\CurrentPathStack;
+use Drupal\Core\Path\PathMatcher;
 use Drupal\Core\Plugin\DefaultPluginManager;
 use Drupal\Core\Plugin\Factory\ContainerFactory;
 use Drupal\Core\Routing\CurrentRouteMatch;
@@ -17,45 +19,50 @@ use Symfony\Component\DependencyInjection\Container;
 class BlogHeroPluginManager extends DefaultPluginManager {
 
   /**
-   * The current route match.
-   *
-   * @var \Drupal\Core\Routing\CurrentRouteMatch
+   * @var \Drupal\Core\Path\CurrentPathStack
    */
-  protected $routeMatch;
+  protected CurrentPathStack $pathCurrent;
 
   /**
-   * The condition manager.
-   *
-   * @var \Drupal\Core\Condition\ConditionManager
+   * @var \Drupal\Core\Path\PathMatcher
    */
-  protected $conditionManager;
+  protected PathMatcher $pathMather;
+
+  /**
+   * @var \Drupal\Core\Routing\CurrentRouteMatch
+   */
+  protected CurrentRouteMatch $routeMatcher;
+
 
   /**
    * BlogHeroPluginManager constructor.
    *
-   * @params string $type
-   *   The BlogHero plugin type.
+   * @param $type
    * @param \Traversable $namespaces
-   *   The namespaces.
    * @param \Drupal\Core\Cache\CacheBackendInterface $cache_backend
-   *   The cache backend.
    * @param \Drupal\Core\Extension\ModuleHandlerInterface $module_handler
-   *   The module handler.
+   * @param \Drupal\Core\Path\CurrentPathStack $path_current
+   * @param \Drupal\Core\Path\PathMatcher $path_matcher
    * @param \Drupal\Core\Routing\CurrentRouteMatch $current_route_match
-   *   The current route match.
-   * @param \Drupal\Core\Condition\ConditionManager $condition_manager
-   *   The condition manager.
    */
-  public function __construct($type, \Traversable $namespaces, CacheBackendInterface $cache_backend, ModuleHandlerInterface $module_handler, CurrentRouteMatch $current_route_match, ConditionManager $condition_manager) {
+  public function __construct(
+    $type,
+    \Traversable $namespaces,
+    CacheBackendInterface $cache_backend,
+    ModuleHandlerInterface $module_handler,
+    CurrentPathStack $path_current,
+    PathMatcher $path_matcher,
+    CurrentRouteMatch $current_route_match,
+  ) {
+    $this->pathCurrent = $path_current;
+    $this->pathMather = $path_matcher;
+    $this->routeMatcher = $current_route_match;
 
-    $this->routeMatch = $current_route_match;
-    $this->conditionManager = $condition_manager;
-
-    // E.g. entity => Entity, path => Path.
-    $type_camelized = Container::camelize($type);
-    $subdir = "Plugin/BlogHero/{$type_camelized}";
-    $plugin_interface = "Drupal\blog_hero\Plugin\BlogHero\{$type_camelized}\BlogHero{$type_camelized}PluginInterface";
-    $plugin_definition_annotation_name = "Drupal\blog_hero\Annotation\BlogHero{$type_camelized}";
+    // E.g. entity => Entity, path => Path
+    $typeCamelize = Container::camelize($type);
+    $subdir = "Plugin/BlogHero/{$typeCamelize}";
+    $plugin_interface = "Drupal\blog_hero\Plugin\BlogHero\{$typeCamelize}\BlogHero{$typeCamelize}PluginInterface";
+    $plugin_definition_annotation_name = "Drupal\blog_hero\Annotation\BlogHero{$typeCamelize}";
 
     parent::__construct($subdir, $namespaces, $module_handler, $plugin_interface, $plugin_definition_annotation_name);
 
@@ -65,15 +72,14 @@ class BlogHeroPluginManager extends DefaultPluginManager {
       'weight' => 0,
     ];
 
-    if ($type == 'path') {
+    if ($type === 'path') {
       $this->defaults += [
         'match_type' => 'listed',
       ];
     }
 
     // Call hook_blog_hero_TYPE_alter().
-    $this->alterInfo("blog_hero_{$type}");
-
+    $this->alterInfo("blog_hero{$type}");
     $this->setCacheBackend($cache_backend, "blog_hero:{$type}");
     $this->factory = new ContainerFactory($this->getDiscovery());
   }
@@ -81,7 +87,7 @@ class BlogHeroPluginManager extends DefaultPluginManager {
   /**
    * Gets suitable plugins for current request.
    */
-  public function getSuitablePlugins() {
+  public function getSuitablePlugins(): array {
     $plugin_type = $this->defaults['plugin_type'];
 
     if ($plugin_type == 'entity') {
@@ -94,13 +100,13 @@ class BlogHeroPluginManager extends DefaultPluginManager {
   }
 
   /**
-   * Gets blog hero entity plugins suitable for current request.
+   * Gets plugins entity suitable current request.
    */
-  protected function getSuitableEntityPlugins() {
+  protected function getSuitableEntityPlugins(): array {
     $plugins = [];
 
     $entity = NULL;
-    foreach ($this->routeMatch->getParameters() as $parameter) {
+    foreach ($this->routeMatcher->getParameters() as $parameter) {
       if ($parameter instanceof EntityInterface) {
         $entity = $parameter;
         break;
@@ -110,7 +116,7 @@ class BlogHeroPluginManager extends DefaultPluginManager {
     if ($entity) {
       foreach ($this->getDefinitions() as $plugin_id => $plugin) {
         if ($plugin['enabled']) {
-          $same_entity_type = $plugin['entity_type'] == $entity->getEntityTypeId();
+          $same_entity_type = $plugin['entity_type'] === $entity->getEntityTypeId();
           $needed_bundle = in_array($entity->bundle(), $plugin['entity_bundle']) || in_array('*', $plugin['entity_bundle']);
 
           if ($same_entity_type && $needed_bundle) {
@@ -122,34 +128,37 @@ class BlogHeroPluginManager extends DefaultPluginManager {
     }
 
     uasort($plugins, '\Drupal\Component\Utility\SortArray::sortByWeightElement');
+
     return $plugins;
   }
 
   /**
-   * Gets blog hero path plugins suitable for current request.
+   * Gets plugins path suitable current request.
    */
-  protected function getSuitablePathPlugins() {
+  protected function getSuitablePathPlugins(): array {
     $plugins = [];
 
     foreach ($this->getDefinitions() as $plugin_id => $plugin) {
       if ($plugin['enabled']) {
-        $pages = implode(PHP_EOL, $plugin['match_path']);
+        $patterns = implode(PHP_EOL, $plugin['match_path']);
+        $current_path = $this->pathCurrent->getPath();
+        $is_match_path = $this->pathMather->matchPath($current_path, $patterns);
 
-        /** @var \Drupal\system\Plugin\Condition\RequestPath $request_path_condition */
-        $request_path_condition = $this->conditionManager
-          ->createInstance('request_path');
+        $match_type = match ($plugin['match_path']) {
+          default => 0,
+          'unlisted' => 1,
+        };
 
-        $request_path_condition
-          ->setConfig('pages', $pages)
-          ->setConfig('negate', $plugin['match_type'] == 'unlisted');
+        $is_plugin_needed = ($is_match_path xor $match_type);
 
-        if ($request_path_condition->execute()) {
+        if ($is_plugin_needed) {
           $plugins[$plugin_id] = $plugin;
         }
       }
     }
 
     uasort($plugins, '\Drupal\Component\Utility\SortArray::sortByWeightElement');
+
     return $plugins;
   }
 

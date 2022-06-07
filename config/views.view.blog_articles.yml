@@ -248,3 +248,29 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
+  page:
+    id: page
+    display_title: 'Blog entries'
+    display_plugin: page
+    position: 2
+    display_options:
+      title: Blog
+      arguments: {  }
+      defaults:
+        title: false
+        arguments: false
+      display_description: ''
+      display_extenders:
+        metatag_display_extender:
+          metatags: {  }
+          tokenize: false
+      path: blog
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }

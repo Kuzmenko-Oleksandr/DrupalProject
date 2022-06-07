@@ -1,0 +1,25 @@
+uuid: 2835d5bb-7c52-439a-821f-d6dcd76ea5db
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - blogger
+_core:
+  default_config_hash: Cy3vkpYrD1O5JG-BeEnokF0bByHYDEa8CBfWivB4_SQ
+id: blogger_branding
+theme: blogger
+region: content
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: false
+visibility: {  }

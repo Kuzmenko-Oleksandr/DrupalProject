@@ -1,0 +1,59 @@
+style.base:
+  css:
+    base:
+      assets/css/generic.css: {}
+
+style.layout:
+  css:
+    layout:
+      assets/css/elements.css: {}
+      assets/css/objects.css: {}
+
+style.component:
+  css:
+    component:
+      assets/css/components.css: {}
+
+style.utilities:
+  css:
+    state:
+      assets/css/utilities.css: {}
+  dependencies:
+    - blogger/google.fonts
+    - blogger/firacode
+
+google.fonts:
+  css:
+    theme:
+      //fonts.googleapis.com/css?family=Roboto:400,400i,700,700i&subset=cyrillic: { type: external, minified: true }
+
+firacode:
+  css:
+    theme:
+      assets/css/fira-code.css: {}
+
+paragraph.code:
+  js:
+    assets/js/paragraph-code.js: {}
+  dependencies:
+    - blogger/highlightjs
+    - core/drupal
+
+mobile_menu:
+  js:
+    assets/js/mobile-menu.js: {}
+  dependencies:
+    - core/drupal
+
+# Third party libraries
+highlightjs:
+  remote: https://highlightjs.org/
+  version: 9.10
+  license:
+    name: BSD
+    gpl-compatible: true
+  css:
+    theme:
+      /libraries/highlightjs/styles/idea.css: {}
+  js:
+    /libraries/highlightjs/highlight.pack.min.js: { minfied: true }

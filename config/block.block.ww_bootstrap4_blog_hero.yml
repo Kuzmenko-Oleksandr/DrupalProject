@@ -1,0 +1,25 @@
+uuid: 0bb3dee3-d47a-443f-9026-961ba4375d8d
+langcode: en
+status: false
+dependencies:
+  module:
+    - block_visibility_groups
+    - blog_hero
+  theme:
+    - ww_bootstrap4
+id: ww_bootstrap4_blog_hero
+theme: ww_bootstrap4
+region: content
+weight: -1
+provider: null
+plugin: blog_hero
+settings:
+  id: blog_hero
+  label: 'Blog Hero'
+  label_display: visible
+  provider: blog_hero
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''

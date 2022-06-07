@@ -1,0 +1,15 @@
+.paragraph-remote-video {
+  &--video-width-720px {
+    .paragraph-remote-video__field-remote-video {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+  }
+
+  @include media-breakpoint-only(xs) {
+    &__field-remote-video {
+      margin-left: gap(-3);
+      margin-right: gap(-3);
+    }
+  }
+}

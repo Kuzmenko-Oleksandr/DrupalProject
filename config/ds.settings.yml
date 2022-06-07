@@ -1,11 +1,13 @@
 _core:
   default_config_hash: PVw1CqINc8mdBO0v-gKzrhG9fd1pyKwx4wIXdks-k3w
 disabled: false
-field_template: false
+field_template: true
 ft-default: default
 ft-show-colon: false
 ft-layout-builder: false
 classes:
-  region: {  }
+  region:
+    - card|Card
+    - 'card-deck|Card Deck'
   field: {  }
 use_field_names: true

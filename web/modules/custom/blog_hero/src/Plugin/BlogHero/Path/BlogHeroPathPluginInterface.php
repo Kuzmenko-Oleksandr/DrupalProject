@@ -1,28 +1,32 @@
 <?php
 
+
 namespace Drupal\blog_hero\Plugin\BlogHero\Path;
+
 
 use Drupal\blog_hero\Plugin\BlogHero\BlogHeroPluginInterface;
 
 /**
- * Interface for BlogHero path plugin type.
+ * Interface BlogHeroPathPluginInterface for path plugin type.
  */
 interface BlogHeroPathPluginInterface extends BlogHeroPluginInterface {
 
   /**
+   * An array with paths.
+   *
    * Gets match paths.
    *
    * @return array
-   *   An array with paths.
    */
-  public function getMatchPath();
+  public function getMatchPath(): array;
 
   /**
+   * The match type.
+   *
    * Gets match type.
    *
    * @return string
-   *   The match type.
    */
-  public function getMatchType();
+  public function getMatchType(): string;
 
 }

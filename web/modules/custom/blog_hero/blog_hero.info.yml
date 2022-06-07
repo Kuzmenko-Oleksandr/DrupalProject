@@ -1,7 +1,7 @@
 name: Blog Hero
-description: Custom page title.
+description: Custom code for Paragraphs.
 type: module
+package: blog
 core_version_requirement: ^9 || ^10
 dependencies:
-  - drupal:system
   - twig_tweak:twig_tweak

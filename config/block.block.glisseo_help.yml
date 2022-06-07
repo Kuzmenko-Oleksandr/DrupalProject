@@ -1,0 +1,22 @@
+uuid: 26c84dc3-17f5-4e23-937a-264ea1cef8fb
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - glisseo
+_core:
+  default_config_hash: MhtNdV__HKRTab0ZPjkPNfYL4Ng4UPBucDLoC7Rg5Eo
+id: glisseo_help
+theme: glisseo
+region: help
+weight: -30
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

@@ -91,11 +91,13 @@ module:
   token: 0
   toolbar: 0
   tour: 0
+  twig_debugger: 0
   twig_tweak: 0
   update: 0
   user: 0
   views_templates: 0
   views_ui: 0
+  ww_bootstrap4_layouts: 0
   youtube: 0
   ds: 1
   pathauto: 1
@@ -108,4 +110,13 @@ theme:
   seven: 0
   bootstrap: 0
   olivero: 0
+  stable9: 0
+  glisseo: 0
+  blogger: 0
+  bootstrap_cdn: 0
+  bootstrap_sass: 0
+  stable: 0
+  classy: 0
+  bootstrap4: 0
+  ww_bootstrap4: 0
 profile: minimal

@@ -1,0 +1,22 @@
+.form-comment-comment-form {
+  &__author {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @include media-breakpoint-between(md, lg) {
+    &__name {
+      margin-right: gap(2);
+    }
+
+    &__mail {
+      margin-right: gap(2);
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    &__author {
+      flex-flow: wrap;
+    }
+  }
+}

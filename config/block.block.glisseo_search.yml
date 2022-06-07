@@ -1,0 +1,23 @@
+uuid: 095dc2b6-1a26-4ed0-9b87-7a6a1ac64f27
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - glisseo
+_core:
+  default_config_hash: F3d5hyAFunLh4PhGviJF019fHn1Z3_zy5gzsQ0tX1K0
+id: glisseo_search
+theme: glisseo
+region: sidebar_second
+weight: -1
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: Search
+  label_display: visible
+  provider: search
+  page_id: ''
+visibility: {  }

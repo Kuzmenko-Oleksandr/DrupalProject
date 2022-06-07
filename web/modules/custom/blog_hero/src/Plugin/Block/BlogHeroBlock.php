@@ -2,15 +2,13 @@
 
 namespace Drupal\blog_hero\Plugin\Block;
 
-use Drupal\Core\Block\Annotation\Block;
+use Drupal\blog_hero\Plugin\BlogHeroPluginManager;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
-use Drupal\blog_hero\Plugin\BlogHeroPluginManager;
-use Drupal\example\ExampleInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Provides a 'Blog Hero' block.
+ * Provides a blog hero block.
  *
  * @Block(
  *   id = "blog_hero",
@@ -71,6 +69,7 @@ class BlogHeroBlock extends BlockBase implements ContainerFactoryPluginInterface
     );
   }
 
+
   /**
    * {@inheritdoc}
    */
@@ -109,5 +108,6 @@ class BlogHeroBlock extends BlockBase implements ContainerFactoryPluginInterface
       'url.path',
     ];
   }
+
 
 }

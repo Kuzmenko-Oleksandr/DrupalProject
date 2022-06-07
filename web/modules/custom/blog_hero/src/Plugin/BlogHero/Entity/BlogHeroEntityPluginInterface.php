@@ -3,34 +3,39 @@
 namespace Drupal\blog_hero\Plugin\BlogHero\Entity;
 
 use Drupal\blog_hero\Plugin\BlogHero\BlogHeroPluginInterface;
+use Drupal\Core\Entity\EntityInterface;
 
 /**
- * Interface for BlogHero entity plugin type.
+ * Interface BlogHeroEntityPluginInterface for entity plugin type.
+ *
+ * @package Drupal\blog_hero\Plugin\BlogHero\Entity
  */
 interface BlogHeroEntityPluginInterface extends BlogHeroPluginInterface {
 
   /**
    * Gets entity type id.
    *
+   * The entity type id.
+   *
    * @return string
-   *   The entity type id.
    */
-  public function getEntityType();
+  public function getEntityType(): string;
 
   /**
-   * Gets entity bundles.
+   * An array with entity type bundles.
+   *
+   * Gets entity bundle.
    *
    * @return array
-   *   An array with entity type bundles.
    */
-  public function getEntityBundle();
+  public function getEntityBundle(): array;
 
   /**
    * Gets current entity.
    *
-   * @return \Drupal\Core\Entity\EntityInterface
-   *   The entity object.
+   * @return \Drupal\Core\Entity\EntityInterface|NULL
+   *  The entity object.
    */
-  public function getEntity();
+  public function getEntity(): EntityInterface|NULL;
 
 }

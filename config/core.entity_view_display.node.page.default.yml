@@ -4,10 +4,51 @@ status: true
 dependencies:
   config:
     - field.field.node.page.field_paragraphs
+    - field.field.node.page.layout_builder__layout
     - node.type.page
   module:
     - entity_reference_revisions
+    - layout_builder
+    - layout_discovery
     - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          d050401f-fd58-47ba-97a4-e347a1ac587e:
+            uuid: d050401f-fd58-47ba-97a4-e347a1ac587e
+            region: content
+            configuration:
+              id: 'extra_field_block:node:page:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 0
+            additional: {  }
+          a94bda80-15a0-40b7-b928-ed168d3262ef:
+            uuid: a94bda80-15a0-40b7-b928-ed168d3262ef
+            region: content
+            configuration:
+              id: 'field_block:node:page:field_paragraphs'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_revisions_entity_view
+                label: above
+                settings:
+                  view_mode: default
+                  link: ''
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }
 _core:
   default_config_hash: M_Y8L5tfmhx7DR143E05YyZSpvgil6VFvqcfBWykalg
 id: node.page.default
@@ -25,6 +66,10 @@ content:
     weight: 102
     region: content
   links:
+    settings: {  }
+    third_party_settings: {  }
     weight: 101
     region: content
-hidden: {  }
+hidden:
+  layout_builder__layout: true
+  previous_next: true

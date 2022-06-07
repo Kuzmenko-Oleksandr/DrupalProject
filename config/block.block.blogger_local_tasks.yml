@@ -1,0 +1,22 @@
+uuid: f0cb81f6-a6b9-491a-85ef-37a3e4cd5232
+langcode: en
+status: true
+dependencies:
+  theme:
+    - blogger
+_core:
+  default_config_hash: qHdtze2DZ2mFfaJadxjZz6epm92_SN9SAFY4yJGl8Fo
+id: blogger_local_tasks
+theme: blogger
+region: content
+weight: 10
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }
