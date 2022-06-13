@@ -47,12 +47,14 @@ module:
   image: 0
   imagemagick: 0
   imce: 0
+  inline_entity_form: 0
   jquery_ui: 0
   jquery_ui_draggable: 0
   jquery_ui_droppable: 0
   layout_builder: 0
   layout_discovery: 0
   link: 0
+  mailchimp: 0
   mailsystem: 0
   markdown: 0
   media: 0

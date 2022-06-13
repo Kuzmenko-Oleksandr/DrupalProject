@@ -1,0 +1,144 @@
+uuid: f2ca76ff-50a3-45e0-8c5f-2a322c310ec9
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.portfolio.body
+    - field.field.node.portfolio.field_featured
+    - field.field.node.portfolio.field_portfolio_category
+    - node.type.portfolio
+    - views.view.related_projects
+  module:
+    - ds
+    - layout_builder
+    - layout_discovery
+    - text
+    - user
+    - views
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: ds_2col
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+          wrappers:
+            left: div
+            right: div
+          outer_wrapper: div
+          attributes: ''
+          link_attribute: ''
+          link_custom: ''
+          classes:
+            layout_class:
+              row: row
+            left:
+              col-md-8: col-md-8
+            right:
+              col-md-4: col-md-4
+        components:
+          441032af-0a0b-42e0-973e-6157d62b0872:
+            uuid: 441032af-0a0b-42e0-973e-6157d62b0872
+            region: right
+            configuration:
+              id: 'field_block:node:portfolio:body'
+              label: Body
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings:
+                  ds:
+                    ft:
+                      id: default
+                      settings:
+                        lb: ''
+                        lb-col: false
+                        classes: {  }
+            weight: 0
+            additional: {  }
+          81c64f1d-8ae1-4527-a832-1b5d74bceb32:
+            uuid: 81c64f1d-8ae1-4527-a832-1b5d74bceb32
+            region: left
+            configuration:
+              id: 'field_block:node:portfolio:field_featured'
+              label: Featured
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_entity_view
+                label: hidden
+                settings:
+                  view_mode: carousel_media
+                third_party_settings:
+                  ds:
+                    ft:
+                      id: default
+                      settings:
+                        lb: ''
+                        lb-col: false
+                        classes: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+        components:
+          de935e9a-915c-4b07-9893-418324ccfc0d:
+            uuid: de935e9a-915c-4b07-9893-418324ccfc0d
+            region: content
+            configuration:
+              id: 'views_block:related_projects-block_1'
+              label: ''
+              label_display: visible
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+id: node.portfolio.full
+targetEntityType: node
+bundle: portfolio
+mode: full
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_featured:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_portfolio_category: true
+  previous_next: true

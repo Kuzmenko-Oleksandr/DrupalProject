@@ -1,0 +1,29 @@
+uuid: 5847bcf7-67d5-4848-8b24-56c2bf6903ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.carousel_item
+    - field.storage.block_content.field_image
+    - media.type.image
+id: block_content.carousel_item.field_image
+field_name: field_image
+entity_type: block_content
+bundle: carousel_item
+label: Image
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
