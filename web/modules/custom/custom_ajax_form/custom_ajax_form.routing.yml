@@ -1,0 +1,7 @@
+custom_ajax_form.simple_ajax_form:
+  path: 'custom-ajax-form'
+  defaults:
+    _form: '\Drupal\custom_ajax_form\Form\SimpleAjaxForm'
+    _title: 'Ajax calculating '
+  requirements:
+    _permission: 'access content'

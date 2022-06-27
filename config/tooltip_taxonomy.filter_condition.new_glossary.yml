@@ -1,0 +1,23 @@
+uuid: 32f56f7c-8623-4e60-a35a-d44a51bcd23d
+langcode: en
+status: true
+dependencies: {  }
+cid: new_glossary
+name: 'new glossary'
+weight: 0
+vids:
+  - glossary_tooltip
+path: {  }
+contentTypes:
+  id: node_type
+  bundles:
+    glossary_tooltip: glossary_tooltip
+  negate: 0
+field: {  }
+view: {  }
+formats:
+  markdown: markdown
+  basic_html: basic_html
+  full_html: full_html
+  plain_text: plain_text
+  restricted_html: '0'

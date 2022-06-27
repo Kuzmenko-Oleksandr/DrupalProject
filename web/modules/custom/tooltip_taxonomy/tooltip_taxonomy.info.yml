@@ -1,0 +1,9 @@
+name: Glossary Tooltip
+description: 'Tooltip information from taxonomy terms'
+package: Taxonomy
+configure: entity.tooltip_taxonomy.config
+type: module
+core_version_requirement: ^8 || ^9
+dependencies:
+  - drupal:filter
+  - drupal:field

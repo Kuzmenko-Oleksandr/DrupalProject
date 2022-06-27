@@ -1,0 +1,53 @@
+.term_wrapper {
+  display: inline-block;
+  position: relative;
+  width: fit-content;
+  background-color: black;
+  border-radius: 5px;
+}
+
+a.glossary_tooltip {
+  color: white;
+  border-bottom: none;
+}
+
+a.glossary_tooltip:hover {
+  border-bottom: lightgreen solid 1px;
+  color: white;
+}
+
+.term_wrapper:hover .tooltip_description {
+  display: block;
+}
+
+div {
+  font-size: 18px;
+}
+
+.node__content p {
+  font-size: 18px;
+}
+
+.tooltip_description {
+  display: none;
+  position: absolute;
+  background: black;
+  padding: 15px;
+  color: #fff;
+  font-size: 15px;
+  width: 200px;
+  left: 0;
+  z-index: 999;
+}
+
+a.read_more {
+  color: lightgreen;
+  border-bottom: none;
+}
+
+a.read_more:hover {
+  color: green;
+  border-bottom: none;
+  text-decoration: underline yellow;
+}
+

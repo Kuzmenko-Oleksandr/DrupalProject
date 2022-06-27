@@ -1,0 +1,25 @@
+uuid: 91518f25-173a-458c-9d84-f5caefd57346
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_visibility_groups
+    - mailchimp_signup
+  theme:
+    - ww_bootstrap4
+id: mailchimpsubscriptionformnewletter
+theme: ww_bootstrap4
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'mailchimp_signup_subscribe_block:newletter'
+settings:
+  id: 'mailchimp_signup_subscribe_block:newletter'
+  label: Newsletter
+  label_display: visible
+  provider: mailchimp_signup
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''

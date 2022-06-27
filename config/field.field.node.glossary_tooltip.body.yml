@@ -1,0 +1,23 @@
+uuid: f310978a-90e2-4fc0-b05a-ca238a40e35a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.glossary_tooltip
+  module:
+    - text
+id: node.glossary_tooltip.body
+field_name: body
+entity_type: node
+bundle: glossary_tooltip
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

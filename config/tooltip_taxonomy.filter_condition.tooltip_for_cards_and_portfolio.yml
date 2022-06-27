@@ -1,0 +1,33 @@
+uuid: ffa237a4-a60a-432c-af50-0d72a55c81d5
+langcode: en
+status: true
+dependencies: {  }
+cid: tooltip_for_cards_and_portfolio
+name: 'Tooltip for cards and portfolio'
+weight: 0
+vids:
+  - portfolio_category
+path:
+  id: request_path
+  pages: ''
+  negate: 0
+contentTypes:
+  id: node_type
+  bundles:
+    portfolio: portfolio
+  negate: 0
+field: {  }
+view:
+  card: card
+  full: '0'
+  rss: '0'
+  search_index: '0'
+  search_result: '0'
+  teaser: '0'
+  token: '0'
+formats:
+  basic_html: basic_html
+  full_html: full_html
+  plain_text: plain_text
+  markdown: '0'
+  restricted_html: '0'

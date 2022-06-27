@@ -1,0 +1,6 @@
+name: Glossary Tooltip
+type: module
+description: 'Tooltip information from taxonomy terms'
+package: Custom
+core_version_requirement: ^8 || ^9
+

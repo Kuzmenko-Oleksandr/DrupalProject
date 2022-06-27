@@ -1,0 +1,29 @@
+uuid: 243bc091-9169-4546-aa9e-9a0b72482ecd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_topics
+    - node.type.glossary_tooltip
+    - taxonomy.vocabulary.glossary_tooltip
+id: node.glossary_tooltip.field_topics
+field_name: field_topics
+entity_type: node
+bundle: glossary_tooltip
+label: Topics
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      glossary_tooltip: glossary_tooltip
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

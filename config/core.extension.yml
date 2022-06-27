@@ -27,9 +27,11 @@ module:
   ctools: 0
   ctools_block: 0
   ctools_views: 0
+  custom_ajax_form: 0
   datetime: 0
   dblog: 0
   devel: 0
+  devel_entity_updates: 0
   devel_generate: 0
   dynamic_page_cache: 0
   easy_breadcrumb: 0
@@ -42,6 +44,7 @@ module:
   file: 0
   file_mdm: 0
   filter: 0
+  glossary_tooltip: 0
   help: 0
   history: 0
   image: 0
@@ -55,6 +58,10 @@ module:
   layout_discovery: 0
   link: 0
   mailchimp: 0
+  mailchimp_campaign: 0
+  mailchimp_lists: 0
+  mailchimp_signup: 0
+  maillog: 0
   mailsystem: 0
   markdown: 0
   media: 0
@@ -84,6 +91,7 @@ module:
   scheduler: 0
   search: 0
   shortcut: 0
+  smtp: 0
   snippet_manager: 0
   sophron: 0
   swiftmailer: 0
@@ -92,6 +100,7 @@ module:
   text: 0
   token: 0
   toolbar: 0
+  tooltip_taxonomy: 0
   tour: 0
   twig_debugger: 0
   twig_tweak: 0
@@ -99,6 +108,8 @@ module:
   user: 0
   views_templates: 0
   views_ui: 0
+  webform: 0
+  webform_ui: 0
   ww_bootstrap4_layouts: 0
   youtube: 0
   ds: 1

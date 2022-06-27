@@ -1,0 +1,60 @@
+<?php
+
+use Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException;
+use Drupal\Component\Plugin\Exception\PluginNotFoundException;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_ENTITY_TYPE_view_alter().
+ */
+function glossary_tooltip_node_view_alter(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display)
+{
+  $body = $entity->get('body')->value;
+  try {
+    $termStorage = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
+  } catch (InvalidPluginDefinitionException|PluginNotFoundException $e) {
+  }
+  $ids = $termStorage->getQuery()
+    ->condition('vid', 'glossary_tooltip')
+    ->execute();
+
+  $vocabulary = [];
+  foreach ($termStorage->loadMultiple($ids) as $item) {
+    $vocabulary[$item->id()] = [
+      "name" => $item->label(),
+      "body" => $item->get("description")->value,
+      "id" => $item->id()
+    ];
+  }
+
+  foreach ($vocabulary as $term) {
+    $description = mb_strimwidth(strip_tags($term["body"]), 0, 100, "...");
+    $name_term = $term["name"];
+    $id_term = $term["id"];
+    $body = str_replace($name_term, "<div class='term_wrapper'><a class='glossary_tooltip'>$name_term</a><div class='tooltip_description'>$description<br><a class='read_more' href='/taxonomy/term/$id_term' target='_blank'>Read more</a></div></div>", $body);
+  }
+  if ($build['#view_mode'] == 'full' && isset($build['body'])) {
+    $build['body'] = [
+      '#type' => 'container',
+      '#attributes' => [
+        'class' => ['body_glossary_tooltip'],
+      ],
+    ];
+    $build['field__item']['p'] = [
+      '#type' => 'html_tag',
+      '#tag' => 'p',
+      '#value' => $body,
+    ];
+  }
+  return ($build['#attached']['library'] [] = 'glossary_tooltip/glossary_tooltip');
+}
+
+
+function glossary_tooltip_help($route_name, RouteMatchInterface $route_match)
+{
+  if ($route_name == 'help.page.glossary_tooltip') {
+    return 'If you want to use this module, then you need to install it, a glossary tooltip vocabulary will be automatically created in the taxonomy, add your terms to this dictionary, then add text in the body on the page and use the dictionary to pop up.';
+  }
+}

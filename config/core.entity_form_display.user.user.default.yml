@@ -3,10 +3,15 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_first_name
+    - field.field.user.user.field_last_name
+    - field.field.user.user.field_newletter
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
     - image
+    - mailchimp_lists
+    - path
     - user
 _core:
   default_config_hash: FaQ9Ptcpxpg30AtiqRDtl_8zbJArHP1LPfug_s59TOA
@@ -21,6 +26,28 @@ content:
   contact:
     weight: 5
     region: content
+  field_first_name:
+    type: string_textfield
+    weight: 32
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_last_name:
+    type: string_textfield
+    weight: 33
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_newletter:
+    type: mailchimp_lists_select
+    weight: 31
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   language:
     weight: 0
     region: content

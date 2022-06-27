@@ -1,0 +1,4 @@
+name: Custom Ajax Form
+description: Our custom Form
+type: module
+core_version_requirement: ^9 || ^10

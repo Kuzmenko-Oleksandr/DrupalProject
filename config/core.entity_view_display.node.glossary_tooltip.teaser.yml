@@ -1,0 +1,40 @@
+uuid: fa8fbf58-f7cf-4194-b6b5-3b9cb6302f2a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.glossary_tooltip.body
+    - field.field.node.glossary_tooltip.field_topics
+    - node.type.glossary_tooltip
+  module:
+    - text
+    - user
+id: node.glossary_tooltip.teaser
+targetEntityType: node
+bundle: glossary_tooltip
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_topics:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  previous_next: true

@@ -1,0 +1,12 @@
+uuid: ccc5d2b5-d1ab-49a5-97c1-3e80424de7fe
+langcode: en
+status: true
+dependencies: {  }
+id: software
+label: Software
+category: ''
+likert: false
+options: |-
+  drupal: Drupal
+  wordpress: Wordpress
+  react: React

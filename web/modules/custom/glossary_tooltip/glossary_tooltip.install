@@ -1,0 +1,72 @@
+<?php
+/**
+ * @file
+ * Install file for hooks and custom functions.
+ */
+
+use Drupal\Core\Entity\EntityStorageException;
+use Drupal\taxonomy\Entity\Term;
+use Drupal\taxonomy\Entity\Vocabulary;
+
+/**
+ *  Implements hook_install().
+ *
+ * @throws EntityStorageException
+ */
+function glossary_tooltip_install()
+{
+  $vid = 'glossary_tooltip';
+  $voc = Vocabulary::load('glossary_tooltip');
+  if (!$voc) {
+    Vocabulary::create([
+      'name' => 'Glossary Tooltip',
+      'description' => 'Vocabulary for glossary tooltip',
+      'vid' => $vid
+    ])->save();
+  }
+  $items = [
+    'Bird',
+    'Dog',
+    'Cat',
+  ];
+  foreach ($items as $item) {
+    if ($item == 'Bird') {
+      $term = Term::create([
+        'parent' => [],
+        'name' => $item,
+        'vid' => $vid,
+        'description' => [
+          'value' => 'Birds are vertebrates (animals with backbones) with wings and feathers. Most birds can fly, using powerful muscles to flap their wings. But a few bird species do not have strong enough wings to fly, and so these birds are flightless. Birds’ bodies are covered with a light, tough layer of feathers and they have very light skeletons. Instead of teeth, they have hornlike beaks, or bills. Birds hatch from eggs, and many species build nests where their eggs and young can develop in safety.'
+        ],
+      ])->save();
+    }
+    if ($item == 'Dog') {
+      $term = Term::create([
+        'parent' => [],
+        'name' => $item,
+        'vid' => $vid,
+        'description' => [
+          'value' => 'In the wild, a dog is a slender, muscular mammal with four long legs and a bushy tail. Dogs are covered with fur that is usually a similar color all over its body or speckled. They are well-built for hunting, with excellent senses to track prey, strong legs for running, and sharp teeth for biting. Smaller dogs, such as foxes, prey on rodents and birds. Bigger species, such as the gray wolf, work in large groups, called packs, to hunt mammals as big as deer. Dogs have short, blunt claws and hard pads on their feet.   '
+        ],
+      ])->save();
+    }
+    if ($item == 'Cat') {
+      $term = Term::create([
+        'parent' => [],
+        'name' => $item,
+        'vid' => $vid,
+        'description' => [
+          'value' => 'Cats are graceful, carnivorous (meat-eating) mammals with sharp teeth and claws. Most kinds of cat prey on other mammals or birds, and most hunt alone at night. Only  live and hunt in groups. The claws of cats are extended to help grip their prey, but retracted (pulled back) when not in use. Unlike dogs, cats can rotate their paws to grip their victim, so that they can make a quick kill with a bite to the neck. Their jaw muscles are particularly strong, which means they have a powerful bite. A cat’s vision  and sense of hearing are both excellent—for tracking down prey and for avoiding danger.'
+        ],
+      ])->save();
+    }
+  }
+}
+/**
+ * @throws EntityStorageException
+ */
+function glossary_tooltip_uninstall()
+{
+  $voc = Vocabulary::load('glossary_tooltip');
+  $voc?->delete();
+}

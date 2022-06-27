@@ -1,0 +1,8 @@
+api_key: 01be4178de6df0b97759a6aa8bd57017-us8
+api_timeout: 10
+cron: false
+batch_limit: 100
+enable_connected: false
+connected_id: null
+connected_paths: null
+webhook_hash: 6e78a53fcecddd58f6297264a4064f94

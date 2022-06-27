@@ -1,0 +1,8 @@
+uuid: d8c06186-2f1f-4cf2-a5c6-a9ebbc32b962
+langcode: en
+status: true
+dependencies: {  }
+name: 'Glossary Tooltip'
+vid: glossary_tooltip
+description: ''
+weight: 0

@@ -5,13 +5,19 @@ dependencies:
   config:
     - filter.format.markdown
     - filter.format.restricted_html
+    - node.type.glossary_tooltip
   module:
     - comment
     - contact
     - filter
+    - mailchimp_campaign
+    - mailchimp_signup
     - media
+    - node
     - search
+    - smtp
     - system
+    - tvi
 _core:
   default_config_hash: 6WavjUYXIegP9AAg2zXGx54MWIVoomC3SZhNiqe-Dyk
 id: anonymous
@@ -21,8 +27,21 @@ is_admin: false
 permissions:
   - 'access comments'
   - 'access content'
+  - 'access mailchimp signup pages'
   - 'access site-wide contact form'
+  - 'administer mailchimp campaigns'
+  - 'administer smtp module'
+  - 'create glossary_tooltip content'
+  - 'define view for terms in glossary_tooltip'
+  - 'define view for vocabulary glossary_tooltip'
+  - 'delete any glossary_tooltip content'
+  - 'delete glossary_tooltip revisions'
+  - 'delete own glossary_tooltip content'
+  - 'edit any glossary_tooltip content'
+  - 'edit own glossary_tooltip content'
+  - 'revert glossary_tooltip revisions'
   - 'search content'
   - 'use text format markdown'
   - 'use text format restricted_html'
+  - 'view glossary_tooltip revisions'
   - 'view media'

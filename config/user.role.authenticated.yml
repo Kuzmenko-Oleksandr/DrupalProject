@@ -9,10 +9,14 @@ dependencies:
     - comment
     - contact
     - filter
+    - mailchimp_campaign
+    - mailchimp_signup
     - media
     - search
     - shortcut
+    - smtp
     - system
+    - tvi
 _core:
   default_config_hash: I44QAB4es39lNzMQWiJLq2dfjX7VRSOzT_5KzAcUq_M
 id: authenticated
@@ -22,8 +26,13 @@ is_admin: false
 permissions:
   - 'access comments'
   - 'access content'
+  - 'access mailchimp signup pages'
   - 'access shortcuts'
   - 'access site-wide contact form'
+  - 'administer mailchimp campaigns'
+  - 'administer smtp module'
+  - 'define view for terms in glossary_tooltip'
+  - 'define view for vocabulary glossary_tooltip'
   - 'post comments'
   - 'search content'
   - 'skip comment approval'
